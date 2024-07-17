@@ -13,7 +13,7 @@ var audiobook=['audio-book',]
 var podcasts=[new Link('Trending episodes','https://www.podchaser.com/episodes/trending'),
                       new Link('Trending podcasts','https://www.podchaser.com/podcasts/trending?ranking_period=month'),]
 var generic=['class','debate','interview','lecture','live music','podcast',]
-var hobbies=['battle report','history','lore','philosophy','role-playing session',]
+var hobbies=['battle report','history','lore','philosophy','role-playing session','world-building',]
 var platforms=[new Link('Spotify episodes','https://open.spotify.com/collection/your-episodes'),
                       new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'),
                       new Link('Amazon watch-list','https://www.primevideo.com/mystuff/watchlist'),
