@@ -9,15 +9,19 @@ class Link{
   }
 }
 
-export var podcasts=[new Link('Trending episodes','https://www.podchaser.com/episodes/trending'),
+var audiobook=['audio-book',]
+var podcasts=[new Link('Trending episodes','https://www.podchaser.com/episodes/trending'),
                       new Link('Trending podcasts','https://www.podchaser.com/podcasts/trending?ranking_period=month'),]
-export var generic=['audio-book','class','debate','interview','lecture','live music','podcast',]
-export var hobbies=['battle report','history','lore','philosophy','role-playing session',]
-export var platforms=[new Link('Spotify episodes','https://open.spotify.com/collection/your-episodes'),
+var generic=['class','debate','interview','lecture','live music','podcast',]
+var hobbies=['battle report','history','lore','philosophy','role-playing session',]
+var platforms=[new Link('Spotify episodes','https://open.spotify.com/collection/your-episodes'),
                       new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'),
                       new Link('Amazon watch-list','https://www.primevideo.com/mystuff/watchlist'),
                       new Link('You Tube music library','https://music.youtube.com/library'),
                       new Link('Pod Chaser feed','https://www.podchaser.com/myfeed'),]
+var music=[new Link('Band Camp','https://daily.bandcamp.com/'),
+            new Link('Sound Cloud','https://soundcloud.com/discover'),
+            new Link('You Tube music','https://music.youtube.com/')]
 
 function search(topics){
   let queries=[]
@@ -48,12 +52,14 @@ function list(section,links){
 function encase(text){return text[0].toUpperCase()+text.slice(1).toLowerCase()}
 
 export function setup(){
+  list('Audio-books',search(audiobook ))
   for(let c of COUNTRIES) for(let chart of CHARTS)
     podcasts.push(new Link(`${encase(chart)} ${c.toUpperCase()} chart`,`https://www.podchaser.com/charts/${chart}/${c}/top%20podcasts`))
+  list('Music',music)
   list('Platform-specific',platforms)
   list('Podcasts',podcasts)
   list('Videos',search(generic))
   hobbies=search(hobbies)
   hobbies.push(new Link('New speed-runs','https://tukkek.github.io/new-speedruns/'))
-  list('Videos (hobby)',hobbies)
+  list('Videos (hobbies)',hobbies)
 }
