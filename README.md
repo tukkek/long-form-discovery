@@ -1,6 +1,6 @@
 # Long-form content discovery
 
-Directory that helps find long-form content (1- or 2-hour-long podcasts or videos) including generic and hobby topics; and multiple top-charts.
+Directory that helps find long-form content (1- or 2-hour-long podcasts and videos) including generic and hobby topics; and multiple top-charts.
 
 The directory can be accessed here: https://tukkek.github.io/long-form-discovery/
 
