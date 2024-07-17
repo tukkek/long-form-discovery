@@ -18,7 +18,7 @@ export var hobbies=['battle report','history','lore','philosophy','role-playing 
 function search(topics){
   let queries=[]
   for(let t of topics){
-    let url=`https://www.youtube.com/results?search_query=${t.replaceAll(' ','+')}&sp=EgYIAhABGAI%253D`
+    let url=`https://www.youtube.com/results?search_query=${t.replaceAll(' ','+')}&sp=EgYIAhABGAI%253D#filter`
     queries.push(new Link(t,url))
   }
   return queries

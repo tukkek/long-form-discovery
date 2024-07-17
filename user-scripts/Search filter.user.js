@@ -33,4 +33,7 @@ function filter(){
   }
 }
 
-GM_registerMenuCommand('Start filtering',()=>setInterval(filter,1000))
+function start(){setInterval(filter,1000)}
+
+if(document.location.toString().indexOf('#filter')>=0) start()
+else GM_registerMenuCommand('Start filtering',start)
