@@ -9,15 +9,15 @@ class Link{
   }
 }
 
-export var podcasts=[new Link('My feed','https://www.podchaser.com/myfeed'),
-                      new Link('Trending episodes','https://www.podchaser.com/episodes/trending'),
+export var podcasts=[new Link('Trending episodes','https://www.podchaser.com/episodes/trending'),
                       new Link('Trending podcasts','https://www.podchaser.com/podcasts/trending?ranking_period=month'),]
 export var generic=['audio-book','class','debate','interview','lecture','live music','podcast',]
 export var hobbies=['battle report','history','lore','philosophy','role-playing session',]
 export var platforms=[new Link('Spotify episodes','https://open.spotify.com/collection/your-episodes'),
                       new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'),
                       new Link('Amazon watch-list','https://www.primevideo.com/mystuff/watchlist'),
-                      new Link('You Tube music library','https://music.youtube.com/library'),]
+                      new Link('You Tube music library','https://music.youtube.com/library'),
+                      new Link('Pod Chaser feed','https://www.podchaser.com/myfeed'),]
 
 function search(topics){
   let queries=[]
