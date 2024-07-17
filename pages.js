@@ -4,7 +4,7 @@ const VIEW=document.body
 
 class Link{
   constructor(name,url){
-    this.name=encase(name)
+    this.name=name
     this.url=url
   }
 }
@@ -19,7 +19,7 @@ function search(topics){
   let queries=[]
   for(let t of topics){
     let url=`https://www.youtube.com/results?search_query=${t.replaceAll(' ','+')}&sp=EgYIAhABGAI%253D#filter`
-    queries.push(new Link(t,url))
+    queries.push(new Link(encase(t),url))
   }
   return queries
 }
@@ -44,7 +44,7 @@ function encase(text){return text[0].toUpperCase()+text.slice(1).toLowerCase()}
 
 export function setup(){
   for(let c of COUNTRIES) for(let chart of CHARTS)
-    podcasts.push(new Link(`${chart} ${c.toUpperCase()} chart`,`https://www.podchaser.com/charts/${chart}/${c}/top%20podcasts`))
+    podcasts.push(new Link(`${encase(chart)} ${c.toUpperCase()} chart`,`https://www.podchaser.com/charts/${chart}/${c}/top%20podcasts`))
   generate('Podcasts',podcasts)
   generate('Generic videos',search(generic))
   generate('Hobby videos',search(hobbies))
