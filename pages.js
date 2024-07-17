@@ -14,6 +14,10 @@ export var podcasts=[new Link('My feed','https://www.podchaser.com/myfeed'),
                       new Link('Trending podcasts','https://www.podchaser.com/podcasts/trending?ranking_period=month'),]
 export var generic=['audio-book','class','debate','interview','lecture','live music','podcast',]
 export var hobbies=['battle report','history','lore','philosophy','role-playing session',]
+export var platforms=[new Link('Spotify episodes','https://open.spotify.com/collection/your-episodes'),
+                      new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'),
+                      new Link('Amazon watch-list','https://www.primevideo.com/mystuff/watchlist'),
+                      new Link('You Tube music library','https://music.youtube.com/library'),]
 
 function search(topics){
   let queries=[]
@@ -24,17 +28,18 @@ function search(topics){
   return queries
 }
 
-function create(text,tag){
+function create(text,tag,parent=VIEW){
   let e=document.createElement(tag)
   e.textContent=text
-  VIEW.appendChild(e)
+  parent.appendChild(e)
   return e
 }
 
 function list(section,links){
-  create(section,'h1')
+  let d=create('','div')
+  create(section,'h3',d)
   for(let l of links.sort((a,b)=>a.name.localeCompare(b.name))){
-    let a=create(l.name,'a')
+    let a=create(l.name,'a',d)
     a.href=l.url
     a.target='_blank'
   }
@@ -45,12 +50,10 @@ function encase(text){return text[0].toUpperCase()+text.slice(1).toLowerCase()}
 export function setup(){
   for(let c of COUNTRIES) for(let chart of CHARTS)
     podcasts.push(new Link(`${encase(chart)} ${c.toUpperCase()} chart`,`https://www.podchaser.com/charts/${chart}/${c}/top%20podcasts`))
-  podcasts.push(new Link('Spotify episodes','https://open.spotify.com/collection/your-episodes'))
+  list('Platform-specific',platforms)
   list('Podcasts',podcasts)
-  generic=search(generic)
-  generic.push(new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'))
-  list('Generic videos',generic)
+  list('Videos',search(generic))
   hobbies=search(hobbies)
   hobbies.push(new Link('New speed-runs','https://tukkek.github.io/new-speedruns/'))
-  list('Hobby videos',hobbies)
+  list('Videos (hobby)',hobbies)
 }

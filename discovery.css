@@ -5,3 +5,14 @@ a{
 a:focus{
   font-weight:bold;
 }
+body{
+	display:grid;
+	grid-auto-flow:column;
+	justify-content:left;
+	grid-gap:1em;
+}
+a{
+  border-left:dashed black .1em;
+  padding-left:1em;
+  margin-left:1em;
+}
