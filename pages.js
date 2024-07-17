@@ -31,9 +31,9 @@ function create(text,tag){
   return e
 }
 
-function generate(section,links){
+function list(section,links){
   create(section,'h1')
-  for(let l of links){
+  for(let l of links.sort((a,b)=>a.name.localeCompare(b.name))){
     let a=create(l.name,'a')
     a.href=l.url
     a.target='_blank'
@@ -45,7 +45,9 @@ function encase(text){return text[0].toUpperCase()+text.slice(1).toLowerCase()}
 export function setup(){
   for(let c of COUNTRIES) for(let chart of CHARTS)
     podcasts.push(new Link(`${encase(chart)} ${c.toUpperCase()} chart`,`https://www.podchaser.com/charts/${chart}/${c}/top%20podcasts`))
-  generate('Podcasts',podcasts)
-  generate('Generic videos',search(generic))
-  generate('Hobby videos',search(hobbies))
+  list('Podcasts',podcasts)
+  list('Generic videos',search(generic))
+  hobbies=search(hobbies)
+  hobbies.push(new Link('New speed-runs','https://tukkek.github.io/new-speedruns/'))
+  list('Hobby videos',hobbies)
 }
