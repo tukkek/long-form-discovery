@@ -45,6 +45,7 @@ function encase(text){return text[0].toUpperCase()+text.slice(1).toLowerCase()}
 export function setup(){
   for(let c of COUNTRIES) for(let chart of CHARTS)
     podcasts.push(new Link(`${encase(chart)} ${c.toUpperCase()} chart`,`https://www.podchaser.com/charts/${chart}/${c}/top%20podcasts`))
+  podcasts.push(new Link('Spotify episodes','https://open.spotify.com/collection/your-episodes'))
   list('Podcasts',podcasts)
   generic=search(generic)
   generic.push(new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'))
