@@ -13,7 +13,8 @@ var audiobook=['audio-book',]
 var podcasts=[new Link('Trending episodes','https://www.podchaser.com/episodes/trending'),
                       new Link('Trending podcasts','https://www.podchaser.com/podcasts/trending?ranking_period=month'),]
 var generic=['class','debate','interview','lecture','live music','podcast',]
-var hobbies=['battle report','history','lore','philosophy','role-playing session','world-building','movie review',"let's play",]
+var topics=['battle report','history','lore','philosophy','role-playing session','world-building','movie review',"let's play",
+            new Link('New speed-runs','https://tukkek.github.io/new-speedruns/'),]
 var platforms=[new Link('Spotify episodes','https://open.spotify.com/collection/your-episodes'),
                       new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'),
                       new Link('Amazon watch-list','https://www.primevideo.com/mystuff/watchlist'),
@@ -26,8 +27,14 @@ var music=[new Link('Band Camp','https://daily.bandcamp.com/'),
 function search(topics){
   let queries=[]
   for(let t of topics){
-    let url=`https://www.youtube.com/results?search_query=${t.replaceAll(' ','+')}&sp=EgYIAhABGAI%253D#filter`
-    queries.push(new Link(encase(t),url))
+    let link=t instanceof Link&&t
+    if(!link){
+      let name=encase(t)
+      t=t.replaceAll(' ','+')
+      let url=`https://www.youtube.com/results?search_query=${t}&sp=EgYIAhABGAI%253D#filter`
+      link=new Link(name,url)
+    }
+    queries.push(link)
   }
   return queries
 }
@@ -59,7 +66,5 @@ export function setup(){
   list('Platform-specific',platforms)
   list('Podcasts',podcasts)
   list('Videos',search(generic))
-  hobbies=search(hobbies)
-  hobbies.push(new Link('New speed-runs','https://tukkek.github.io/new-speedruns/'))
-  list('Videos (hobbies)',hobbies)
+  list('Videos (topics)',search(topics))
 }
