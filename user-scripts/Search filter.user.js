@@ -7,11 +7,12 @@
 // @grant        GM_registerMenuCommand
 // ==/UserScript==
 const TITLE=50
-const BANNED=['#',' & ']
+const BANNED=['#',' & ','/','@','ep.',' : ',' ep ']
 
 function remove(video){
   let t=video.querySelector('#video-title').textContent.trim()
   if(t.length>=TITLE) return true
+  if(t[0].toLowerCase()==t[0]) return true
   let u=t.toUpperCase()
   let count=0
   for(let i=0;i<t.length;i++) if(t[i]==u[i]) count+=1
@@ -21,7 +22,7 @@ function remove(video){
   if(length.length<3) return true
   let hours=Number(length[0])
   if(hours!=1&&hours!=2) return true
-  if(BANNED.find(b=>t.indexOf(b)>=0)) return true
+  if(BANNED.find(b=>t.toLowerCase().indexOf(b)>=0)) return true
   return false
 }
 
