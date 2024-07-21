@@ -7,6 +7,7 @@
 // @grant        GM_registerMenuCommand
 // ==/UserScript==
 const TITLE=50
+const BANNED=['#',' & ']
 
 function remove(video){
   let t=video.querySelector('#video-title').textContent.trim()
@@ -20,6 +21,7 @@ function remove(video){
   if(length.length<3) return true
   let hours=Number(length[0])
   if(hours!=1&&hours!=2) return true
+  if(BANNED.find(b=>t.indexOf(b)>=0)) return true
   return false
 }
 
