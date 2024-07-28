@@ -18,7 +18,8 @@ var topics=['lore','philosophy','role-playing session','movie review',
 var platforms=[new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'),
                       new Link('Amazon watch-list','https://www.primevideo.com/mystuff/watchlist'),
                       new Link('You Tube music library','https://music.youtube.com/library'),
-                      new Link('Pod Chaser feed','https://www.podchaser.com/myfeed'),]
+                      new Link('Pod Chaser feed','https://www.podchaser.com/myfeed'),
+                      new Link('Spotify episodes','https://open.spotify.com/collection/your-episodes'),]
 var music=[new Link('Band Camp','https://daily.bandcamp.com/'),
             new Link('Sound Cloud','https://soundcloud.com/discover'),
             new Link('You Tube music','https://music.youtube.com/')]
