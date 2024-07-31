@@ -13,8 +13,7 @@ var audiobook=['audio-book',]
 var podcasts=[new Link('Trending episodes','https://www.podchaser.com/episodes/trending'),
                       new Link('Trending podcasts','https://www.podchaser.com/podcasts/trending?ranking_period=month'),]
 var generic=['class','debate','interview','lecture','podcast',]
-var topics=['lore','philosophy','movie review','astronomy','artificial intelligence','information security','psychology',
-            'music theory','crafting','survival','urban exploration',
+var topics=['lore','philosophy','movie review','urban exploration',
             new Link('New speed-runs','https://tukkek.github.io/new-speedruns/'),]
 var platforms=[new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'),
                       new Link('Amazon watch-list','https://www.primevideo.com/mystuff/watchlist'),
