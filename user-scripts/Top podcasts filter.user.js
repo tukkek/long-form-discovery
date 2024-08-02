@@ -8,7 +8,6 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=podchaser.com
 // @grant        GM_registerMenuCommand
 // ==/UserScript==
-const VIEW=document.querySelectorAll('.MuiTableBody-root tr')
 const LONG=20
 
 function validate(row){
@@ -19,8 +18,9 @@ function validate(row){
 }
 
 function filter(){
-    for(let row of VIEW) try{
-        if(!validate(row)) row.remove()
+    let rows=document.querySelectorAll('.MuiTableBody-root tr')
+    for(let r of rows) try{
+        if(!validate(r)) r.remove()
     }catch(e){
         continue
     }
