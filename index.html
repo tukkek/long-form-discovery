@@ -1,12 +1,16 @@
 <!doctype html>
-<meta encoding='utf8'>
+<meta charset='utf8'>
 
 <link rel='stylesheet' href='discovery.css'>
 <link rel="icon" type="image" href="bulb.png">
 
 <title>Long-form content discovery</title>
 
+<template id='link'>
+  <div class='link'><a></a> <span class='checkmark'>✓</span></div>
+</template>
+
 <script type='module'>
-  import * as pages from './pages.js'
-  pages.setup()
+  import * as links from './links.js'
+  links.setup()
 </script>

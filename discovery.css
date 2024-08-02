@@ -1,12 +1,8 @@
 bohy{
 	background-color:slategray;
 }
-a{
-  display:block;
+.link{
   width:max-content;
-}
-a:focus{
-  font-weight:bold;
 }
 body{
 	display:grid;
@@ -14,8 +10,17 @@ body{
 	justify-content:left;
 	grid-gap:1em;
 }
-a{
+.link{
   border-left:dashed black .1em;
   padding-left:1em;
   margin-left:1em;
+}
+.link .checkmark{
+  display:none;
+}
+.link.visited a{
+  text-decoration:line-through;
+}
+.link.visited .checkmark{
+  display:unset;
 }

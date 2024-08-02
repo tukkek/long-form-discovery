@@ -1,6 +1,7 @@
 const COUNTRIES=['br','fr','mx','us']
 const CHARTS=['apple','spotify']
 const VIEW=document.body
+const LINK=document.querySelector('template#link').content.children[0]
 
 class Link{
   constructor(name,url){
@@ -50,9 +51,13 @@ function list(section,links){
   let d=create('','div')
   create(section,'h3',d)
   for(let l of links.sort((a,b)=>a.name.localeCompare(b.name))){
-    let a=create(l.name,'a',d)
+    let view=LINK.cloneNode(true)
+    let a=view.querySelector('a')
+    a.textContent=l.name
     a.href=l.url
     a.target='_blank'
+    a.onclick=()=>view.classList.add('visited')
+    d.appendChild(view)
   }
 }
 
