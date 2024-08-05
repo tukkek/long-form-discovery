@@ -21,9 +21,7 @@ var platforms=[new Link('You Tube watch-later','https://www.youtube.com/playlist
                       new Link('You Tube music library','https://music.youtube.com/library'),
                       new Link('Pod Chaser feed','https://www.podchaser.com/myfeed'),
                       new Link('Spotify episodes','https://open.spotify.com/collection/your-episodes'),]
-var music=[new Link('Band Camp','https://daily.bandcamp.com/'),
-            new Link('Sound Cloud','https://soundcloud.com/discover'),
-            new Link('You Tube music','https://music.youtube.com/')]
+var music=[new Link('Sound Cloud','https://soundcloud.com/discover')]
 
 function search(topics){
   let queries=[]
