@@ -19,7 +19,8 @@ var topics=['philosophy','movie review',
 var platforms=[new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'),
                       new Link('Amazon watch-list','https://www.primevideo.com/mystuff/watchlist'),
                       new Link('You Tube music library','https://music.youtube.com/library'),
-                      new Link('Pod Chaser feed','https://www.podchaser.com/myfeed'),]
+                      new Link('Pod Chaser feed','https://www.podchaser.com/myfeed'),
+                      new Link('Pod Chaser bookmarks','https://www.podchaser.com/profile/bookmarks/episodes'),]
 var music=[new Link('Sound Cloud','https://soundcloud.com/discover')]
 
 function search(topics){
