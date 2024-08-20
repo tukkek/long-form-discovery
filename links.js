@@ -22,6 +22,10 @@ var platforms=[new Link('You Tube watch-later','https://www.youtube.com/playlist
                       new Link('Pod Chaser feed','https://www.podchaser.com/myfeed'),
                       new Link('Pod Chaser bookmarks','https://www.podchaser.com/profile/bookmarks/episodes'),]
 var music=[new Link('Sound Cloud','https://soundcloud.com/discover')]
+var trending=[new Link('United States','https://trends.google.com/trends/explore?date=now%207-d&geo=US&gprop=youtube&hl=en-GB'),
+              new Link('Mexico','https://trends.google.com/trends/explore?date=now%207-d&geo=MX&gprop=youtube&hl=en-GB'),
+              new Link('France','https://trends.google.com/trends/explore?date=now%207-d&geo=FR&gprop=youtube&hl=en-GB'),
+              new Link('Brazil','https://trends.google.com/trends/explore?date=now%207-d&geo=BR&gprop=youtube&hl=en-GB'),]
 
 function search(topics){
   let queries=[]
@@ -70,4 +74,5 @@ export function setup(){
   list('Podcasts',podcasts)
   list('Videos',search(generic))
   list('Videos (topics)',search(topics))
+  list('Trending topics',trending)
 }
