@@ -13,9 +13,9 @@ class Link{
 var audiobook=['audio-book',]
 var podcasts=[new Link('Trending episodes','https://www.podchaser.com/episodes/trending'),
                       new Link('Trending podcasts','https://www.podchaser.com/podcasts/trending?ranking_period=month'),]
-var generic=['debate','interview','lecture','podcast',]
+/*var generic=['debate','interview','lecture','podcast',]
 var topics=['philosophy','movie review',
-            new Link('New speed-runs','https://tukkek.github.io/new-speedruns/'),]
+            new Link('New speed-runs','https://tukkek.github.io/new-speedruns/'),]*/
 var platforms=[new Link('You Tube watch-later','https://www.youtube.com/playlist?list=WL'),
                       new Link('Amazon watch-list','https://www.primevideo.com/mystuff/watchlist'),
                       new Link('You Tube music library','https://music.youtube.com/library'),
@@ -72,7 +72,7 @@ export function setup(){
   list('Music',music)
   list('Platform-specific',platforms)
   list('Podcasts',podcasts)
-  list('Videos',search(generic))
-  list('Videos (topics)',search(topics))
+  // list('Videos',search(generic))
+  // list('Videos (topics)',search(topics))
   list('Trending topics',trending)
 }
