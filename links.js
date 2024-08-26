@@ -25,6 +25,8 @@ var trending=['Trending topics',
               new Link('Mexico','https://trends.google.com/trends/explore?date=now%207-d&geo=MX&gprop=youtube&hl=en-GB'),
               new Link('France','https://trends.google.com/trends/explore?date=now%207-d&geo=FR&gprop=youtube&hl=en-GB'),
               new Link('Brazil','https://trends.google.com/trends/explore?date=now%207-d&geo=BR&gprop=youtube&hl=en-GB'),]
+var audiobooks=['Audio-books',new Link('Libri Vox','https://librivox.org/search?title=&author=&reader=&keywords=&genre_id=0&status=complete&project_type=either&recorded_language=&sort_order=catalog_date&search_page=1&search_form=advanced')]
+var categories=[music,platforms,podcasts,topics,trending,audiobooks]
 
 function search(topics){
   let queries=[]
@@ -67,6 +69,6 @@ function encase(text){return text[0].toUpperCase()+text.slice(1).toLowerCase()}
 export function setup(){
   for(let c of COUNTRIES) for(let chart of CHARTS)
     podcasts.push(new Link(`${encase(chart)} ${c.toUpperCase()} chart`,`https://www.podchaser.com/charts/${chart}/${c}/top%20podcasts`))
-  for(let category of [music,platforms,podcasts,topics,trending])
-    list(category[0],search(category.slice(1)))
+  categories.sort((a,b)=>a[0].localeCompare(b[0]))
+  for(let c of categories) list(c[0],search(c.slice(1)))
 }
