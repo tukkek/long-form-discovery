@@ -19,13 +19,8 @@ var platforms=['Platform-specific',new Link('You Tube watch-later','https://www.
                       new Link('Pod Chaser feed','https://www.podchaser.com/myfeed'),
                       new Link('Pod Chaser bookmarks','https://www.podchaser.com/profile/bookmarks/episodes'),]
 var music=['Music',new Link('Sound Cloud','https://soundcloud.com/discover')]
-var trending=['Trending topics',
-              new Link('United States','https://trends.google.com/trends/explore?date=now%207-d&geo=US&gprop=youtube&hl=en-GB'),
-              new Link('Mexico','https://trends.google.com/trends/explore?date=now%207-d&geo=MX&gprop=youtube&hl=en-GB'),
-              new Link('France','https://trends.google.com/trends/explore?date=now%207-d&geo=FR&gprop=youtube&hl=en-GB'),
-              new Link('Brazil','https://trends.google.com/trends/explore?date=now%207-d&geo=BR&gprop=youtube&hl=en-GB'),]
 var audiobooks=['Audio-books',new Link('Libri Vox','https://librivox.org/search?title=&author=&reader=&keywords=&genre_id=0&status=complete&project_type=either&recorded_language=&sort_order=catalog_date&search_page=1&search_form=advanced')]
-var categories=[music,platforms,podcasts,topics,trending,audiobooks]
+var categories=[music,platforms,podcasts,topics,audiobooks]
 
 function search(topics){
   let queries=[]
