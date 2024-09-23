@@ -4,9 +4,10 @@ const VIEW=document.body
 const LINK=document.querySelector('template#link').content.children[0]
 
 class Link{
-  constructor(name,url){
+  constructor(name,url,year=0){
     this.name=name
     this.url=url
+    this.year=year
   }
 }
 
@@ -20,7 +21,10 @@ var platforms=['Platform-specific',new Link('You Tube watch-later','https://www.
                       new Link('Pod Chaser bookmarks','https://www.podchaser.com/profile/bookmarks/episodes'),]
 var music=['Music',new Link('Sound Cloud','https://soundcloud.com/discover')]
 var audiobooks=['Audio-books',new Link('Libri Vox','https://librivox.org/search?title=&author=&reader=&keywords=&genre_id=0&status=complete&project_type=either&recorded_language=&sort_order=catalog_date&search_page=1&search_form=advanced')]
-var categories=[music,platforms,podcasts,topics,audiobooks]
+var poetry=['Poetry',
+              new Link('The Divine Comedy','https://www.gutenberg.org/files/8800/8800-h/8800-h.htm',1300),
+              new Link('Tao Te Ching','https://sacred-texts.com/tao/taote.htm',-400),]
+var categories=[music,platforms,podcasts,topics,audiobooks,poetry]
 
 function search(topics){
   let queries=[]
@@ -47,7 +51,9 @@ function create(text,tag,parent=VIEW){
 function list(section,links){
   let d=create('','div')
   create(section,'h3',d)
-  for(let l of links.sort((a,b)=>a.name.localeCompare(b.name))){
+  links.sort((a,b)=>a.name.localeCompare(b.name))
+  links.sort((a,b)=>a.year-b.year)
+  for(let l of links){
     let view=LINK.cloneNode(true)
     let a=view.querySelector('a')
     a.textContent=l.name
